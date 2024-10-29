@@ -37,14 +37,14 @@ document.addEventListener("click", function(e){
 
 // FUNCTIONS
 async function getMovieIds(searchTerm){
-    const response = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}&type=movie`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=${searchTerm}&type=movie`)
     const movies = await response.json()
 
     imdbIds = movies.Search.map(e => e.imdbID)
 }
 
 async function getMovieDetails(id){
-    const res = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&i=${id}&type=movie&plot=short`)
+    const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&i=${id}&type=movie&plot=short`)
     const movieData = await res.json()
 
     currentMovieList.push(movieData)
@@ -67,3 +67,4 @@ function saveToLocalStorage(id){
 // ISSUES:
 // search bar doesn't resize smaller
 // event listener for resize for media query 'hidden' toggle
+// refer to github for issues and to do
