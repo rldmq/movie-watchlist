@@ -132,6 +132,8 @@ label{
     display: flex;
     flex-direction: column;
     gap: 1em;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
         .movies-container.empty{
@@ -152,9 +154,10 @@ label{
 }
 
     .movie-poster{
-        width: 100%;
+        max-width: 250px;
         object-fit: cover;
         grid-area: image;
+        margin: auto;
     }
 
 .details-grid{
